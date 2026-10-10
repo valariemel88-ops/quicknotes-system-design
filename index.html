@@ -4,69 +4,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A simple notes application demonstrating REST API requests.">
-  <title>QuickNotes — API Practice</title>
+
+<meta
+name="description"
+content="QuickNotes is a simple notes application demonstrating REST API integration with JavaScript."
+
+>
+
+  <title>QuickNotes — Notes App</title>
+
   <link rel="stylesheet" href="style.css">
   <script src="api.js" defer></script>
 </head>
+
 <body>
-  <header class="site-header">
+  <header class="page-header">
     <div class="container">
       <h1>QuickNotes</h1>
-      <p>A simple notes app powered by API requests.</p>
+      <p>Create, view, and manage your notes.</p>
     </div>
   </header>
 
   <main class="container">
-    <section class="panel" aria-labelledby="create-heading">
-      <h2 id="create-heading">Create a note</h2>
+    <section class="notes-section" aria-labelledby="notes-heading">
+      <div class="section-heading">
+        <div>
+          <h2 id="notes-heading">Your Notes</h2>
+          <p>Load notes from the server or create your own.</p>
+        </div>
 
 ```
-  <form id="note-form">
-    <div class="form-group">
-      <label for="title-input">Note title</label>
-      <input
-        type="text"
-        id="title-input"
-        name="title"
-        maxlength="100"
-        required
-        placeholder="Enter a title"
-      >
-    </div>
-
-    <div class="form-group">
-      <label for="body-input">Note body (optional)</label>
-      <textarea
-        id="body-input"
-        name="body"
-        rows="4"
-        placeholder="Write your note here"
-      ></textarea>
-    </div>
-
-    <button type="submit" id="submit-btn">Create note</button>
-  </form>
-</section>
-
-<section class="panel" aria-labelledby="notes-heading">
-  <div class="section-heading">
-    <h2 id="notes-heading">Your notes</h2>
-    <button type="button" id="load-btn">Load notes</button>
+    <button type="button" id="load-btn">
+      Load Notes
+    </button>
   </div>
 
-  <p id="status" class="status" role="status" aria-live="polite">
-    Select "Load notes" to fetch notes from the server.
+  <p
+    id="status"
+    class="status"
+    role="status"
+    aria-live="polite"
+  >
+    Ready to load notes.
   </p>
 
-  <ul id="notes-list" class="notes-list"></ul>
-</section>
+  <section class="form-section" aria-labelledby="form-heading">
+    <h2 id="form-heading">Create a Note</h2>
 
-<footer class="page-footer">
-  <p>QuickNotes Project 2 — Learning how web apps communicate with APIs.</p>
-</footer>
+    <form id="note-form">
+      <div class="form-group">
+        <label for="title-input">Note title</label>
+
+        <input
+          type="text"
+          id="title-input"
+          name="title"
+          maxlength="100"
+          required
+          placeholder="Enter your note title"
+        >
+
+        <small>Required. Maximum 100 characters.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="body-input">Note content</label>
+
+        <textarea
+          id="body-input"
+          name="body"
+          rows="5"
+          placeholder="Write your note here (optional)"
+        ></textarea>
+      </div>
+
+      <button type="submit" id="submit-btn">
+        Create Note
+      </button>
+    </form>
+  </section>
+
+  <section class="notes-list-section" aria-labelledby="list-heading">
+    <h2 id="list-heading">Notes List</h2>
+
+    <ul id="notes-list" aria-label="Notes">
+    </ul>
+  </section>
+</section>
 ```
 
   </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>
+        QuickNotes Project 2 — Learning how web applications
+        communicate with REST APIs.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
